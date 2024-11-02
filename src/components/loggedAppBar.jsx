@@ -12,13 +12,15 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { Divider } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
-const pages = ['Available Test', 'Test History',];
+const pages = ['available', 'history',];
 const settings = ['Profile', 'Messages', 'Logout'];
 
 function LoggedAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -30,11 +32,14 @@ function LoggedAppBar() {
 
   const handleCloseNavMenu = (str) => {
     console.log(str); // This will now log the page name
-    setAnchorElNav(null); // Optionally close the menu
+    // setAnchorElNav(null); // Optionally close the menu
+    navigate(`/${str}`);
   };
 
-  const handleCloseUserMenu = () => {
+  const handleCloseUserMenu = (str) => {
     setAnchorElUser(null);
+    if(str === "Logout")
+    navigate(`/signin`);
   };
 
   return (
@@ -147,7 +152,7 @@ function LoggedAppBar() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <MenuItem key={setting} onClick={()=>handleCloseUserMenu(setting)}>
                   <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
                 </MenuItem>
               ))}

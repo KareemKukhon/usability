@@ -20,21 +20,27 @@ export default function TestDetails() {
 
 
   return (
-<Box my={5}>
+<Box my={1}>
   <Box my={1}>
   <Accordion expanded={expanded} onChange={handleAccordionChange} sx={{width: "100%"}}>
       <AccordionSummary aria-controls="panel2-content" id="panel2-header" >
-        <Box display="flex" flexDirection="column">
-              <Typography variant="h7" fontWeight="bold">
-            Apr 2, 2023, 8:31 Am
-          </Typography>
-          <Typography variant="subtitle2" color="text.secondary" sx={{ alignSelf: "flex-start", cursor: "pointer" }}>
-            #5424273X
-          </Typography>  
+        <Box display="flex" flexDirection="column" width={"100%"} sx={{width: "100%"}}>
+          <Box display={"flex"} justifyContent={"space-between"}>
+            <div>
+              <Typography variant="h7" fontWeight="bold" textAlign={"left"} >
+                Apr 2, 2023, 8:31 Am
+              </Typography>
+              <Typography variant="subtitle2" color="text.secondary" textAlign={"left"} sx={{ alignSelf: "flex-start", cursor: "pointer" }}>
+                #5424273X
+              </Typography>  
+            </div>
+          
             <Stack variant="row" direction={"row"} mt={1}>
                 <Chip label="Paid" color="success" />
                 <Typography fontWeight={"bold"} ml={1}>$10</Typography>
             </Stack>
+          </Box>
+              
           
           <br />
           <Box display="flex" alignItems="center">

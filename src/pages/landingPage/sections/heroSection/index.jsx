@@ -3,8 +3,10 @@ import React from 'react'
 import DrawerAppBar from '../../../../components/appBar';
 import './style.css';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import { useNavigate } from 'react-router-dom';
 
 export default function HeroSection() {
+  const navigate = useNavigate();
   return (
     <div>
       <div className="background-container">
@@ -39,6 +41,7 @@ export default function HeroSection() {
         
         <Button 
         variant="contained" 
+        onClick={()=>navigate('/signin')}
         sx={{ 
           fontSize: 16,
           top: '20px', 

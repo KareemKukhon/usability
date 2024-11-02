@@ -1,15 +1,16 @@
 import React from 'react';
 import { Box, TextField, Button, Typography, Container, Divider, Stack, Link } from '@mui/material';
 import { Facebook, Google, Twitter } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 // import { useNavigate } from 'react-router-dom';
 
 function SignInPage() {
-//   const navigate = useNavigate();
-
+  const navigate = useNavigate();
   const handleSignIn = (e) => {
     e.preventDefault();
     // Handle sign-in logic here
     console.log("Sign-in button clicked");
+    navigate('/available');
   };
 
   return (
@@ -49,6 +50,7 @@ function SignInPage() {
             autoComplete="current-password"
           />
           <Button
+          onClick={()=>navigate('/available')}
             type="submit"
             fullWidth
             variant="contained"
@@ -63,7 +65,7 @@ function SignInPage() {
               <Link
                 component="button"
                 variant="body2"
-                // onClick={() => navigate('/signup')}
+                onClick={() => navigate('/signup')}
               >
                 Sign up
               </Link>

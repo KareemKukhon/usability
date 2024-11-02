@@ -14,9 +14,10 @@ import {
 } from '@mui/material';
 // import { useNavigate } from 'react-router-dom';
 import { PhotoCamera } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 
 function SignUpPage() {
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileChange = (event) => {
@@ -30,6 +31,7 @@ function SignUpPage() {
     e.preventDefault();
     // Handle sign-up logic here
     console.log("Sign-up button clicked");
+    navigate('/available'); 
   };
 
   return (
@@ -154,6 +156,7 @@ function SignUpPage() {
             sx={{ mt: 2 }}
           />
           <Button
+          onClick={()=>navigate('/signin')}
             type="submit"
             fullWidth
             variant="contained"
@@ -167,7 +170,7 @@ function SignUpPage() {
           Already have an account?{' '}
           <Button
             variant="text"
-            // onClick={() => navigate('/signin')}
+            onClick={() => navigate('/signin')}
           >
             Sign In
           </Button>
