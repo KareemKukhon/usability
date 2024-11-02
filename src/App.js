@@ -25,8 +25,8 @@ function App() {
     <ThemeProvider theme={theme(mode)}>
       <CssBaseline />
     <div className="App">
-      {/* <HomePage></HomePage> */}
-      <SignUpPage></SignUpPage>
+      <HomePage></HomePage>
+      {/* <SignUpPage></SignUpPage> */}
     </div>
   </ThemeProvider>
   );
