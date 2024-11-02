@@ -9,15 +9,14 @@ import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import {theme} from './config/themes/theme';
 import { useState } from 'react';
 import SignInPage from './pages/auth/signIn';
-import SignUpPage from './pages/auth/signUp';
+
+import TestHestory from './pages/testHestory/testHestory';
 
 function App() {
 
   const [mode, setMode] = useState('light'); // Default to light mode
 
-  const toggleTheme = () => {
-    setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
-  };
+
 
 
   return (
@@ -25,8 +24,10 @@ function App() {
     <ThemeProvider theme={theme(mode)}>
       <CssBaseline />
     <div className="App">
-      <HomePage></HomePage>
+      {/* <HomePage></HomePage> */}
       {/* <SignUpPage></SignUpPage> */}
+      {/* <CheckList></CheckList> */}
+      <TestHestory></TestHestory>
     </div>
   </ThemeProvider>
   );
