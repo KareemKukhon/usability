@@ -38,14 +38,22 @@ export default function QuestionCard() {
       borderRadius: 1,
       backgroundColor: theme.palette.background.default,
     }}>
-      <Box sx={{ boxShadow: 2, padding: 2, borderRadius: 1, width: '50%', textAlign: 'center',  }}>
-      <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+      <Box sx={{
+        boxShadow: 2,
+        padding: 2,
+        borderRadius: 1,
+        width: { xs: '90%', sm: '75%', md: '50%' },
+        maxWidth: 700,
+        textAlign: 'center',
+      }}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
           <Stack direction="row" gap="10px">
-            <Typography variant="h3">$10</Typography>
+            <Typography variant="h3" sx={{ fontSize: { xs: 16, sm: 20, md: 24 } }}>$10</Typography>
             <Chip
               avatar={<Avatar alt="Natacha" src="./public/logo.png" />}
               label="Windows & Mac"
               variant="outlined"
+              sx={{ fontSize: { xs: 10, sm: 12, md: 14 } }}
             />
           </Stack>
           <Stack direction="row">
@@ -59,32 +67,39 @@ export default function QuestionCard() {
             </IconButton>
           </Stack>
         </Box>
-      {steps[activeStep].component}
-      
-      <MobileStepper
-        variant="text"
-        steps={maxSteps}
-        position="static"
-        activeStep={activeStep}
-        sx={{
-          display: 'flex',
-          justifyContent: 'flex-end',
-          paddingRight: 2,
-        }}
-        nextButton={
-          <Button
-            size="small"
-            onClick={handleNext}
-            disabled={activeStep === maxSteps - 1}
-            sx={{ marginLeft: 'auto' }}
-          >
-            Next
-            {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
-          </Button>
-        }
-      />
+
+        {steps[activeStep].component}
+
+        <MobileStepper
+          variant="text"
+          steps={maxSteps}
+          position="static"
+          activeStep={activeStep}
+          sx={{
+            display: 'flex',
+            justifyContent: 'flex-end',
+            paddingRight: 2,
+            marginTop: 2,
+          }}
+          nextButton={
+            <Button
+              size="small"
+              onClick={handleNext}
+              disabled={activeStep === maxSteps - 1}
+              sx={{ marginLeft: 'auto' }}
+            >
+              Next
+              {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
+            </Button>
+          }
+          backButton={
+            <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+              {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
+              Back
+            </Button>
+          }
+        />
+      </Box>
     </Box>
-    </Box>
-    
   );
 }

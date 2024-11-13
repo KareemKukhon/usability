@@ -7,6 +7,8 @@ import SignUpPage from './pages/auth/signUp';
 import TestHestory from './pages/testHestory/testHestory';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import AvailableTest from './pages/availablePage';
+import AddTest from './pages/addTest';
+import Dashboard from './pages/dashboard';
 
 function App() {
 
@@ -25,8 +27,16 @@ function App() {
       element: <SignUpPage />,
     },
     {
+      path: "/dashboard",
+      element: <Dashboard />,
+    },
+    {
       path: "/available",
       element: <AvailableTest />,
+    },
+    {
+      path: "/create test",
+      element: <AddTest />,
     },
     {
       path: "/history",

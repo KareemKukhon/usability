@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { Divider } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
-const pages = ['available', 'history',];
+const pages = ['available', 'history','dashboard'];
 const settings = ['Profile', 'Messages', 'Logout'];
 
 function LoggedAppBar() {

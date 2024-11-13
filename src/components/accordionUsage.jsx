@@ -10,7 +10,7 @@ import { theme } from '../config/themes/theme';
 export default function AccordionUsage() {
   return (
     <div>
-      <Accordion sx={{backgroundColor: "background.paper", color: "text.primary"}}>
+      <Accordion  sx={{backgroundColor: "background.paper", color: "text.primary"}}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon sx={{color: "primary.main"}}/>}
           aria-controls="panel1-content"

@@ -23,7 +23,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -31,7 +31,7 @@
   position: relative; /* Position it relative to the container */
     z-index: 2; /* Bring content above the blurred background */
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     top: 20%;
     color: white; 
     padding-inline: 50px;
