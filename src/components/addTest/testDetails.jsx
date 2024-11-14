@@ -124,15 +124,15 @@ export default function TestDetails() {
           </FormControl>
 
           <FormControl sx={{ mt: 4, width: "100%" }}>
-            <FormLabel id="gender-radio-group-label">Gender</FormLabel>
+            <FormLabel id="gender-radio-group-label">Allow participation on</FormLabel>
             <RadioGroup
               row
               aria-labelledby="gender-radio-group-label"
               name="gender-radio-group"
             >
-              <FormControlLabel value="Female" control={<Radio />} label="Female" />
-              <FormControlLabel value="Male" control={<Radio />} label="Male" />
-              <FormControlLabel value="Other" control={<Radio />} label="Other" />
+              <FormControlLabel value="All devices" control={<Radio />} label="All devices" />
+              <FormControlLabel value="Mobile only" control={<Radio />} label="Mobile only" />
+              <FormControlLabel value="Desktop only" control={<Radio />} label="Desktop only" />
             </RadioGroup>
           </FormControl>
         </Grid>

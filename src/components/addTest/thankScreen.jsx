@@ -52,13 +52,13 @@ export default function ThankScreen() {
         <AccordionDetails>
         <Typography variant="inherit">Title</Typography>
           <TextField
-            label="Enter test name"
+            label="Enter title"
             sx={{ mt: 1, width: "100%" }}
           />
           <br /><br />
           <Typography variant="inherit">Message</Typography>
           <TextField
-            label="Enter test name"
+            label="Enter Message"
             sx={{ mt: 1, width: "100%" }}
           />
           <br /><br />
